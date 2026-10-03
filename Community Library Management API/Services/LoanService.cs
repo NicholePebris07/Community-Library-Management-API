@@ -91,7 +91,7 @@ namespace Community_Library_Management_API.Services
                 Status = "Borrowed"
             };
 
-            book.AvailableCopies--;
+            await _bookRepository.UpdateAvailableCopiesAsync(book.Id, -1);
 
             var createdLoan = await _loanRepository.AddAsync(loan);
 
@@ -116,7 +116,9 @@ namespace Community_Library_Management_API.Services
             loan.ReturnedDate = DateTime.UtcNow;
             loan.Status = "Returned";
 
-            loan.Book.AvailableCopies++;
+            await _bookRepository.UpdateAvailableCopiesAsync(
+                loan.BookId,
+                1);
 
             return await _loanRepository.UpdateAsync(loan);
         }
