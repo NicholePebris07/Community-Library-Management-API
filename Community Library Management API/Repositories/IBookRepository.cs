@@ -13,5 +13,7 @@ namespace Community_Library_Management_API.Repositories
         Task<bool> UpdateAsync(Book book);
 
         Task<bool> DeleteAsync(int id);
+
+        Task<bool> UpdateAvailableCopiesAsync(int bookId, int change);
     }
 }

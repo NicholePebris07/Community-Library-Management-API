@@ -1,12 +1,16 @@
-﻿namespace Community_Library_Management_API.Models
+﻿namespace Community_Library_Management_API.Dtos.Loans
 {
-    public class Loan
+    public class LoanReadDto
     {
         public int Id { get; set; }
 
         public int BookId { get; set; }
 
+        public string BookTitle { get; set; } = string.Empty;
+
         public int MemberId { get; set; }
+
+        public string MemberName { get; set; } = string.Empty;
 
         public DateTime BorrowedDate { get; set; }
 
@@ -15,9 +19,5 @@
         public DateTime? ReturnedDate { get; set; }
 
         public string Status { get; set; } = string.Empty;
-
-        public Book Book { get; set; } = null!;
-
-        public Member Member { get; set; } = null!;
     }
 }

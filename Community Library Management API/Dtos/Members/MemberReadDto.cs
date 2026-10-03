@@ -1,6 +1,6 @@
-﻿namespace Community_Library_Management_API.Models
+﻿namespace Community_Library_Management_API.Dtos.Members
 {
-    public class Member
+    public class MemberReadDto
     {
         public int Id { get; set; }
 
@@ -13,7 +13,5 @@
         public DateTime DateJoined { get; set; }
 
         public bool IsActive { get; set; }
-
-        public ICollection<Loan> Loans { get; set; } = new List<Loan>();
     }
 }

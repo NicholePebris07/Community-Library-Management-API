@@ -18,6 +18,8 @@ namespace Community_Library_Management_API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Book)
                 .WithMany(b => b.Loans)

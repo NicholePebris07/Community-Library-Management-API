@@ -74,5 +74,22 @@ namespace Community_Library_Management_API.Repositories
 
             return true;
         }
+        public async Task<bool> UpdateAvailableCopiesAsync(int bookId, int change)
+        {
+            var book = await _context.Books
+                .FirstOrDefaultAsync(b => b.Id == bookId);
+
+            if (book == null)
+            {
+                return false;
+            }
+
+            book.AvailableCopies += change;
+
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
+
 }
