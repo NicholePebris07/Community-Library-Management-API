@@ -10,7 +10,7 @@
 
         public DateTime BorrowedDate { get; set; }
 
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public DateTime? ReturnedDate { get; set; }
 

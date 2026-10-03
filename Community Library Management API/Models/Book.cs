@@ -16,6 +16,6 @@
 
         public int AvailableCopies { get; set; }
 
-        public List<Loan> Loans { get; set; } = new();
+        public ICollection<Loan> Loans { get; set; } = new List<Loan>();
     }
 }
